@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = 'properties_in_market.spiders'
 #USER_AGENT = 'properties_in_market (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 PROXY_POOL_ENABLED = True
 
@@ -42,7 +42,7 @@ PROXY_POOL_ENABLED = True
 DEFAULT_REQUEST_HEADERS = {
    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
    'Accept-Language': 'en',
-    'Referer':'https://www.royallepage.ca/en/search/homes/on/toronto/?search_str=Toronto%2C+ON%2C+CAN&csrfmiddlewaretoken=jENRp5042QN9iAMxA2x6iXGjzC9U8Bpf3k1rAMKW4ROTMkCaEgZbSYIo5REnFUuT&property_type=&house_type=&features=&listing_type=&lat=43.648690000000045&lng=-79.38543999999996&upper_lat=&upper_lng=&lower_lat=&lower_lng=&bypass=&radius=&zoom=&display_type=gallery-view&travel_time=&travel_time_min=30&travel_time_mode=drive&travel_time_congestion=&da_id=&segment_id=&tier2=False&tier2_proximity=0&address=Toronto&method=homes&address_type=city&city_name=Toronto&prov_code=ON&school_id=&min_price=0&max_price=5000000%2B&min_leaseprice=0&max_leaseprice=5000%2B&beds=0&baths=0&transactionType=SALE&keyword=&sortby='
+    'Referer':'@@@@' # Anonymize for privacy. 
 }
 
 # Enable or disable spider middlewares
