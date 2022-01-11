@@ -1,15 +1,8 @@
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-
-
-# useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
-
+from itemadapter import ItemAdapter # useful for handling different item types with a single interface
 import mysql.connector
-#from scrapy_style.properties_in_market.properties_in_market.items import PropertiesInMarketItem
 from .items import PropertiesInMarketItem
+
+
 
 class PropertiesInMarketPipeline:
 
@@ -17,21 +10,18 @@ class PropertiesInMarketPipeline:
         self.create_connection()
         self.create_table()
 
-
-
-
     def create_connection(self):
         self.conn = mysql.connector.connect(
-            host = 'localhost',
-            user = 'root',
-            passwd = 'DIEGOSQL111!',
+            host = '@@@@',
+            user = '@@@@',
+            passwd = '@@@@!',
             database = 'housing_market'
-        )
+        )   # This information was anonymize for privacy reasons
         self.curr = self.conn.cursor()
 
 
     def create_table(self):
-        self.curr.execute("""DROP TABLE IF EXISTS housing_market_333""")    # I CHANGE ADDRESS TO VARCHAR
+        self.curr.execute("""DROP TABLE IF EXISTS housing_market_333""")   
         self.curr.execute(""" CREATE TABLE housing_market_333(
                     identifier VARCHAR(100),
                     city TEXT,
