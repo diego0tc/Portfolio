@@ -168,9 +168,3 @@ class propertySpider(scrapy.Spider):
 
         yield items
 
-
-
-
-
-
-"""
