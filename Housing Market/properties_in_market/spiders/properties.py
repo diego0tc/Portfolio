@@ -1,5 +1,4 @@
 import re
-
 import scrapy
 from ..items import PropertiesInMarketItem  
 #from ..scrapy_style.properties_in_market.properties_in_market.items import PropertiesInMarketItem
