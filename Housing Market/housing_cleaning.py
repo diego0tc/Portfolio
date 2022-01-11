@@ -8,16 +8,17 @@ import matplotlib
 
 import mysql.connector
 
-#-----  MySQL connection-----
+###-----  MySQL connection-----
 
 
 # connecting to mysql
 db = mysql.connector.connect(
-            host = 'localhost',
-            user = 'root',
-            passwd = 'DIEGOSQL111!',
+            host = '####',
+            user = '####',
+            passwd = '####',
             database = 'housing_market'
-        )
+        )   # The information in this section was anonymize 
+
 # selecting table
 cur = db.cursor()
 sql_query = "SELECT * FROM housing_market_333"
@@ -166,7 +167,7 @@ df['baths'] = df['baths'].fillna(med)
 df=df.astype({"baths":int})
 
 
-# Categorization of porcentages
+# Categorization of percentages
 
 list_of_categorization = [
             'one_person',
@@ -219,9 +220,7 @@ df['average_number_of_children_2'] = df['average_number_of_children'].str.replac
 
 
 
-# clean and select top mother tongues (in the area of the property)
-
-# Start first with the categorization of the %
+# clean & select the top 3 mother tongues (in the area of the property)
 
 list_of_tongue = df.mother_tongue.str.findall('([a-z]+)')
 
@@ -250,14 +249,6 @@ df['top_1_mother_tongue'],df['top_2_mother_tongue'],df['top_3_mother_tongue'] = 
 
 
 
-
-
-
-
-
-
-
-
 #------ Checking categories ---------
 
 # numeric columns
@@ -270,11 +261,12 @@ df_non_numeric = df.select_dtypes(exclude=[np.number])
 non_numeric_cols = df_non_numeric.columns.values
 print(non_numeric_cols)
 
+"This procedure was done before and after modifications to the data"
 
 
 
-#------------   checking for missing values ----------------- check at the start and at the end
 
+####------------   checking for missing values ----------------- 
 
 # check null
 print('NUMBER OF NULL VALUES IN EACH COLUMN', df.isnull().sum())
@@ -308,37 +300,29 @@ df['num_missing'] = df[ismissing_cols].sum(axis=1)
 
 df['num_missing'].value_counts().reset_index().sort_values(by='index').plot.bar(x='index', y='num_missing')
 
-
+"This procedure was done before and after modifications to the data"
 
 "the vast mayority of missing values are so small that the website put them as 'none', instead of 0.0001%" \
+
 
 # Delivery to tableau
 
 df.to_csv('housing_data_for_tableau.csv')
 
 
-
 ### irregular  data (outliers)
-
 
 # ----> numeric
 # histogram .
 df['price'].hist(bins=100)
-
-
 # box plot.
 df.boxplot(column=['price'])
 
-df['price'].describe()
-
-
 # ---> categorical
-
 # bar chart -  distribution of a categorical variable
-df['life_stage'].value_counts().plot.bar()  #clean info
-df['employment_type'].value_counts().plot.bar() # clean info
+df['life_stage'].value_counts().plot.bar() 
+df['employment_type'].value_counts().plot.bar() 
 df['houses'].value_counts().plot.bar()
 
 
-########################################## CHECK FOR DUPLICATTES
 
