@@ -1,5 +1,5 @@
 
-This files contains the codes, reports and presentation of this project. It is recomended to start with the pdf version (powerpoint) and then jump into the codes.
+This files contains the codes, reports and presentation of this project. It is recomended to start with the pdf versions and then jump into the codes.
 
 
 
