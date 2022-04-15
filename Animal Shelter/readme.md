@@ -1,10 +1,9 @@
-Hello
 
 This files contains the codes, reports and presentation of this project. It is recomended to start with the pdf version (powerpoint) and then jump into the codes.
 
 
 
-Animal Shelter (Web scrape, Data Mining and Predictive Modeling) 
+# Animal Shelter (Web scrape, Data Mining and Predictive Modeling) 
 
 •	Web scrape information from American Kennel Association and Animal shelters across North America with the purpose of determining the existence of preferences that affected adoption rates. 
 
